@@ -49,9 +49,14 @@ class MainActivity : AppCompatActivity() {
                 call: Call<List<RepoItem>?>,
                 response: Response<List<RepoItem>?>
             ) {
+                if(response.body()!=null && response.body()!!.size > 0){
                     setContentView(R.layout.activity_main)
                     reposList.adapter = RecyclerViewAdaptor(context, response.body()!!)
                     reposList.layoutManager = LinearLayoutManager(context)
+                }
+                else{
+                    setContentView(R.layout.no_repos)
+                }
             }
 
             override fun onFailure(call: Call<List<RepoItem>?>, t: Throwable) {
