@@ -2,6 +2,7 @@ package com.example.repositoryviewer
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +14,7 @@ import com.example.repoapplication.RepoItem
 import com.example.repoapplication.RepositoryActivity
 
 
-class RecyclerViewAdaptor(private val context: Context, private val repos_list: List<RepoItem>): RecyclerView.Adapter<ViewHolder>() {
+class RecyclerViewAdaptor(private val context: Context, private var repos_list: List<RepoItem>): RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -39,6 +40,11 @@ class RecyclerViewAdaptor(private val context: Context, private val repos_list: 
 
     override fun getItemCount(): Int {
         return repos_list.size
+    }
+
+    fun replaceRepoList(repoList : List<RepoItem>){
+        this.repos_list = repoList
+        notifyDataSetChanged()
     }
 
 }
