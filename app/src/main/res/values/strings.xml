@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Repo Application</string>
+    <string name="name_of_repository">Repo Name</string>
+    <string name="name_of_owner">owner</string>
+    <string name="arrow">Arrow</string>
+    <string name="right_arrow">Right Arrow</string>
+    <string name="Text_Heading">Repositories</string>
+    <string name="endingText">You\'re all caught up</string>
+    <string name="github_avatar">github avatar</string>
+    <string name="no_internet_error_message">Please check you internet connection</string>
+    <string name="api_error_message">Error occured while fetching data</string>
+    <string name="try_again_botton">Try Again</string>
+</resources>
